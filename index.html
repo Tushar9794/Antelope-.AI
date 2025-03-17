@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="client.js"></script>
+<style>
+  #mainbox {
+    overflow-y: scroll;
+    width: 80vw; 
+    height: 90vh; 
+  }
+  .itemsrow {
+    position: relative;
+    background-image: url("/img2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* This line makes the image cover the entire container */
+  }
+</style>
+
+
+<body class="bg-chatblack-50">
+  <div class="flex h-[100vh] text-white">
+      <div class="left bg-[#202123] w-2/12">
+
+          <button
+              class="w-[90%] py-2 m-2 px-10 space-x-2 border-white border rounded-md flex mx-4 justify-start items-center hover:opacity-70">
+              <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                  stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>New Chat</span>
+          </button>
+          <div class="text-xs m-4 mx-8 text-gray-400">Today</div>
+          <div class="chats flex flex-col justify-center items-center space-y-2">
+              <!-- {% for chat in myChats %}  -->
+              <div class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 rounded-md bg-gray-600 cursor-pointer flex justify-start items-center">
+                  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                      stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span>Search History</span>
+              </div>
+              <!-- {% endfor %} -->
+              
+          </div>
+
+      </div>
+
+
+      <div class="right1 w-10/12 flex justify-center items-center flex-col">
+          <div class="text-center w-full text-4xl font-bold my-3">
+            Antelope.AI
+          </div>
+
+          <div class="itemsrow flex py-4 w-[43vw] justify-around" id="mainbox">
+            <p id="res" style="z-index: 1;"></p>
+          </div>
+          
+          <div class="itemsrow flex py-4 w-[43vw] justify-around" id="displaynone" style="display: none;">
+              <div class="examples flex flex-col justify-center items-center">
+                  <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round"
+                      stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="5"></circle>
+                      <line x1="12" y1="1" x2="12" y2="3"></line>
+                      <line x1="12" y1="21" x2="12" y2="23"></line>
+                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                      <line x1="1" y1="12" x2="3" y2="12"></line>
+                      <line x1="21" y1="12" x2="23" y2="12"></line>
+                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                  <div class="py-4">Examples</div>
+                  <button
+                      class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">"Explain
+                      quantum computing in simple terms" →</button>
+                  <button class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">"Got
+                      any creative ideas for a 10 year old’s birthday?" →</button>
+                  <button class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">"How
+                      do I make an HTTP request in Javascript?" →</button>
+              </div>
+              <div class="cap flex flex-col justify-center items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                      stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+                  </svg>
+                  <div class="py-4">Capabilities</div>
+                  <button
+                      class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">Remembers
+                      what user said earlier in the conversation</button>
+                  <button
+                      class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">Allows
+                      user to provide follow-up corrections</button>
+                  <button
+                      class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">Trained
+                      to decline inappropriate requests</button>
+              </div>
+
+              <div class="lim flex flex-col justify-center items-center">
+                  <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round"
+                      stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                          d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                      </path>
+                      <line x1="12" y1="9" x2="12" y2="13"></line>
+                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                  <div class="py-4">Limitations</div>
+                  <button class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md"> May
+                      occasionally generate incorrect information</button>
+                  <button class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">May
+                      occasionally produce harmful instructions or biased content</button>
+                  <button
+                      class="bg-gray-600 w-[13vw] text-sm hover:bg-gray-700 py-4 px-4 mx-4  my-2 rounded-md">Limited
+                      knowledge of world and events after 2021</button>
+              </div>
+          </div>
+
+          <div class="input w-full text-center my-2 flex items-center justify-center flex-col">
+              <div class="buttonsvg pl-16 w-[50vw] flex">
+                  <input class="w-full p-4 bg-gray-600 rounded-md" placeholder="Send a Message" type="text"
+                      name="text" id="questionInput">
+
+                  <button id="sendButton" class="relative -left-20 pl-10">
+                      <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                          stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <line x1="22" y1="2" x2="11" y2="13"></line>
+                          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                      </svg>
+                  </button>
+              </div>
+              <div class="text-xs py-2 pr-10 opacity-70">Free Research Preview. Ambalika.AI Developed By - (HARSH),(TUSHAR),(PRIYA)                  information about people, places, or facts.<a class="underline"
+                      href="https://help.openai.com/en/articles/6825453-Ambalika.AI-release-notes"> Ambalika.AI 2.4
+                      Version</a></div>
+          </div>
+      </div>
+  </div>
+  <script src="client.js"></script>
+  <style>    
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+      /* 1 */
+      border-width: 0;
+      /* 2 */
+      border-style: solid;
+      /* 2 */
+      border-color: #e5e7eb;
+      /* 2 */
+    }
+    
+    ::before,
+    ::after {
+      --tw-content: '';
+    }
+    
+    
+    html {
+      line-height: 1.5;
+      /* 1 */
+      -webkit-text-size-adjust: 100%;
+      /* 2 */
+      -moz-tab-size: 4;
+      /* 3 */
+      -o-tab-size: 4;
+         tab-size: 4;
+      /* 3 */
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      /* 4 */
+      font-feature-settings: normal;
+      /* 5 */
+      font-variation-settings: normal;
+      /* 6 */
+    }
+    
+   
+    
+    body {
+      margin: 0;
+      /* 1 */
+      line-height: inherit;
+      /* 2 */
+    }
+    
+    
+    
+    hr {
+      height: 0;
+      /* 1 */
+      color: inherit;
+      /* 2 */
+      border-top-width: 1px;
+      /* 3 */
+    }
+    
+   
+    
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+              text-decoration: underline dotted;
+    }
+    
+   
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+    
+   
+    
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    
+    
+    
+    b,
+    strong {
+      font-weight: bolder;
+    }
+    
+    
+    
+    code,
+    kbd,
+    samp,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      /* 1 */
+      font-size: 1em;
+      /* 2 */
+    }
+    
+   
+    
+    small {
+      font-size: 80%;
+    }
+    
+    
+    
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    
+    
+    table {
+      text-indent: 0;
+      /* 1 */
+      border-color: inherit;
+      /* 2 */
+      border-collapse: collapse;
+      /* 3 */
+    }
+    
+    
+    
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      /* 1 */
+      font-size: 100%;
+      /* 1 */
+      font-weight: inherit;
+      /* 1 */
+      line-height: inherit;
+      /* 1 */
+      color: inherit;
+      /* 1 */
+      margin: 0;
+      /* 2 */
+      padding: 0;
+      /* 3 */
+    }
+    
+    
+    
+    button,
+    select {
+      text-transform: none;
+    }
+    
+    
+    
+    button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'] {
+      -webkit-appearance: button;
+      /* 1 */
+      background-color: transparent;
+      /* 2 */
+      background-image: none;
+      /* 2 */
+    }
+    
+    
+    
+    :-moz-focusring {
+      outline: auto;
+    }
+    
+    
+    
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+    
+    
+    
+    progress {
+      vertical-align: baseline;
+    }
+        
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
+    
+    
+    
+    [type='search'] {
+      -webkit-appearance: textfield;
+      /* 1 */
+      outline-offset: -2px;
+      /* 2 */
+    }
+    
+    
+    
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+    
+    
+    
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      /* 1 */
+      font: inherit;
+      /* 2 */
+    }
+    
+   
+    
+    summary {
+      display: list-item;
+    }
+    
+    
+    
+    blockquote,
+    dl,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    figure,
+    p,
+    pre {
+      margin: 0;
+    }
+    
+    fieldset {
+      margin: 0;
+      padding: 0;
+    }
+    
+    legend {
+      padding: 0;
+    }
+    
+    ol,
+    ul,
+    menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    
+    
+    textarea {
+      resize: vertical;
+    }
+    
+    
+    
+    input::-moz-placeholder, textarea::-moz-placeholder {
+      opacity: 1;
+      /* 1 */
+      color: #9ca3af;
+      /* 2 */
+    }
+    
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      /* 1 */
+      color: #9ca3af;
+      /* 2 */
+    }
+    
+    
+    
+    button,
+    [role="button"] {
+      cursor: pointer;
+    }
+    
+    
+    
+    :disabled {
+      cursor: default;
+    }
+    
+    
+    
+    img,
+    svg,
+    video,
+    canvas,
+    audio,
+    iframe,
+    embed,
+    object {
+      display: block;
+      /* 1 */
+      vertical-align: middle;
+      /* 2 */
+    }
+    
+    
+    
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    
+    
+    [hidden] {
+      display: none;
+    }
+    
+    *, ::before, ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x:  ;
+      --tw-pan-y:  ;
+      --tw-pinch-zoom:  ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position:  ;
+      --tw-gradient-via-position:  ;
+      --tw-gradient-to-position:  ;
+      --tw-ordinal:  ;
+      --tw-slashed-zero:  ;
+      --tw-numeric-figure:  ;
+      --tw-numeric-spacing:  ;
+      --tw-numeric-fraction:  ;
+      --tw-ring-inset:  ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur:  ;
+      --tw-brightness:  ;
+      --tw-contrast:  ;
+      --tw-grayscale:  ;
+      --tw-hue-rotate:  ;
+      --tw-invert:  ;
+      --tw-saturate:  ;
+      --tw-sepia:  ;
+      --tw-drop-shadow:  ;
+      --tw-backdrop-blur:  ;
+      --tw-backdrop-brightness:  ;
+      --tw-backdrop-contrast:  ;
+      --tw-backdrop-grayscale:  ;
+      --tw-backdrop-hue-rotate:  ;
+      --tw-backdrop-invert:  ;
+      --tw-backdrop-opacity:  ;
+      --tw-backdrop-saturate:  ;
+      --tw-backdrop-sepia:  ;
+    }
+    
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x:  ;
+      --tw-pan-y:  ;
+      --tw-pinch-zoom:  ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position:  ;
+      --tw-gradient-via-position:  ;
+      --tw-gradient-to-position:  ;
+      --tw-ordinal:  ;
+      --tw-slashed-zero:  ;
+      --tw-numeric-figure:  ;
+      --tw-numeric-spacing:  ;
+      --tw-numeric-fraction:  ;
+      --tw-ring-inset:  ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur:  ;
+      --tw-brightness:  ;
+      --tw-contrast:  ;
+      --tw-grayscale:  ;
+      --tw-hue-rotate:  ;
+      --tw-invert:  ;
+      --tw-saturate:  ;
+      --tw-sepia:  ;
+      --tw-drop-shadow:  ;
+      --tw-backdrop-blur:  ;
+      --tw-backdrop-brightness:  ;
+      --tw-backdrop-contrast:  ;
+      --tw-backdrop-grayscale:  ;
+      --tw-backdrop-hue-rotate:  ;
+      --tw-backdrop-invert:  ;
+      --tw-backdrop-opacity:  ;
+      --tw-backdrop-saturate:  ;
+      --tw-backdrop-sepia:  ;
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .-left-20 {
+      left: -5rem;
+    }
+    
+    .m-2 {
+      margin: 0.5rem;
+    }
+    
+    .m-4 {
+      margin: 1rem;
+    }
+    
+    .m-auto {
+      margin: auto;
+    }
+    
+    .mx-4 {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    
+    .mx-8 {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    
+    .my-10 {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .my-2 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .my-24 {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+    }
+    
+    .mr-1 {
+      margin-right: 0.25rem;
+    }
+    
+    .mt-52 {
+      margin-top: 13rem;
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .h-4 {
+      height: 1rem;
+    }
+    
+    .h-6 {
+      height: 1.5rem;
+    }
+    
+    .h-9 {
+      height: 2.25rem;
+    }
+    
+    .h-\[100vh\] {
+      height: 100vh;
+    }
+    
+    .h-fit {
+      height: -moz-fit-content;
+      height: fit-content;
+    }
+    
+    .w-10\/12 {
+      width: 83.333333%;
+    }
+    
+    .w-2\/12 {
+      width: 16.666667%;
+    }
+    
+    .w-4 {
+      width: 1rem;
+    }
+    
+    .w-6 {
+      width: 1.5rem;
+    }
+    
+    .w-9 {
+      width: 2.25rem;
+    }
+    
+    .w-\[13vw\] {
+      width: 13vw;
+    }
+    
+    .w-\[40vw\] {
+      width: 40vw;
+    }
+    
+    .w-\[43vw\] {
+      width: 43vw;
+    }
+    
+    .w-\[50vw\] {
+      width: 50vw;
+    }
+    
+    .w-\[90\%\] {
+      width: 90%;
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .cursor-pointer {
+      cursor: pointer;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-start {
+      justify-content: flex-start;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .justify-around {
+      justify-content: space-around;
+    }
+    
+    .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+    
+    .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+    
+    .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+    }
+    
+    .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+    
+    .rounded-md {
+      border-radius: 0.375rem;
+    }
+    
+    .border {
+      border-width: 1px;
+    }
+    
+    .border-white {
+      --tw-border-opacity: 1;
+      border-color: rgb(255 255 255 / var(--tw-border-opacity));
+    }
+    
+    .bg-\[\#202123\] {
+      --tw-bg-opacity: 1;
+      background-color: rgb(32 33 35 / var(--tw-bg-opacity));
+    }
+    
+    .bg-chatblack-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(52 53 65 / var(--tw-bg-opacity));
+    }
+    
+    .bg-gray-600 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+    }
+    
+    .p-4 {
+      padding: 1rem;
+    }
+    
+    .px-10 {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .px-5 {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    .py-7 {
+      padding-top: 1.75rem;
+      padding-bottom: 1.75rem;
+    }
+    
+    .pl-10 {
+      padding-left: 2.5rem;
+    }
+    
+    .pl-16 {
+      padding-left: 4rem;
+    }
+    
+    .pr-10 {
+      padding-right: 2.5rem;
+    }
+    
+    .pt-80 {
+      padding-top: 20rem;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .text-4xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+    
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+    
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+    
+    .font-bold {
+      font-weight: 700;
+    }
+    
+    .text-gray-400 {
+      --tw-text-opacity: 1;
+      color: rgb(156 163 175 / var(--tw-text-opacity));
+    }
+    
+    .text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity));
+    }
+    
+    .underline {
+      text-decoration-line: underline;
+    }
+    
+    .opacity-70 {
+      opacity: 0.7;
+    }
+    
+    .opacity-80 {
+      opacity: 0.8;
+    }
+    
+    .hover\:bg-gray-700:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    }
+    
+    .hover\:opacity-70:hover {
+      opacity: 0.7;
+    }</style>
+</body>
+
+</html>
