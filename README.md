@@ -26,3 +26,5 @@ git clone https://github.com/your-username/gemini-ai-clone.git
 cd gemini-ai-clone
 npm install  # or pip install -r requirements.txt
 npm start    # or python app.py
+
+
