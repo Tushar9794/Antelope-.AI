@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(cors());
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const genAI = new GoogleGenerativeAI('AIzaSyAdHk6BjIks-ZS-ZY-GFK3kauC5FkV1lwE');
+const genAI = new GoogleGenerativeAI('Your API key');
 
 app.post("/", async (req, res) => {
   const { key } = req.body;
