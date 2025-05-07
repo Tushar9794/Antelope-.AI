@@ -14,6 +14,7 @@ Customizable AI Models: Swap or fine-tune models based on project needs.
 
 Scalable & Modular Design: Built for easy expansion and deployment.
 <br>
+****
 
 
 🛠 Tech Stack
@@ -30,13 +31,13 @@ Node.js (Express.js)
 AI Model:
 
 OpenAI ( GPT-3.5) or HuggingFace Transformers
-
+****
 Database:
 
 MongoDB (NoSQL)
 
 PostgreSQL (SQL)
-
+****
 📦 Installation
 Clone the repository
 
@@ -56,7 +57,7 @@ bash
 Copy
 Edit
 npm install
-If the backend uses Python (optional AI service):
+
 
 bash
 Copy
@@ -68,14 +69,7 @@ bash
 Copy
 Edit
 npm start
-Or if using Python backend:
-
-bash
-Copy
-Edit
-python app.py
-Access the app
-Open your browser and go to http://localhost:3000
+****
 
 🛠️ Project Structure
 <br>
