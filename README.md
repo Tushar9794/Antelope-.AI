@@ -13,6 +13,8 @@ API Integration: Easily connect with external APIs for real-time data and extens
 Customizable AI Models: Swap or fine-tune models based on project needs.
 
 Scalable & Modular Design: Built for easy expansion and deployment.
+<br>
+
 
 🛠 Tech Stack
 Frontend:
@@ -75,19 +77,16 @@ python app.py
 Access the app
 Open your browser and go to http://localhost:3000
 
-🛠️ Project Structure (Recommended)
-plaintext
-Copy
-Edit
+🛠️ Project Structure
+<br>
 gemini-ai-clone/
-├── client/               # Frontend (React.js)
-├── server/               # Backend (Node.js, API routes)
-├── models/               # AI Models and configuration
-├── database/             # MongoDB/PostgreSQL schemas
-├── public/               # Static assets
-├── README.md
-├── package.json
+├── client/               # Frontend (React.js)<br>
+├── server/               # Backend (Node.js, API routes)<br>
+├── models/               # AI Models and configuration<br>
+├── database/             # MongoDB/PostgreSQL schemas<br>
+├── public/               # Static assets<br>
 └── .env                  # Environment variables
+<br>
 🔮 Future Improvements (Planned)
 Add Voice Recognition and Speech-to-Text
 
