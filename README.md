@@ -50,20 +50,59 @@
 
 - Node.js ≥ 18
 - A Gemini Pro API key from [Google AI Studio](https://ai.google.dev/)
-
+- 
+****
 ### 🔧 Installation
 
-```bash
-git clone https://github.com/yourusername/antelope.ai.git
+git clone https://github.com/Tushar9794/antelope.ai.git
 cd antelope.ai
+
 npm install
-
----
-
-🔑 Set your API key
-Replace the hardcoded key in index.js:
+<br>
+****
+**🔑  Set your API key**
+<br>
+Replace the hardcoded key in index.js:<br>
 const genAI = new GoogleGenerativeAI('YOUR_API_KEY');
 
+****
+**🚴‍♂️ Run locally**<br>
+
+node index.js
+Open your browser at http://localhost:3000.
+****
+**🧪 Example Request**<br>
+
+POST http://localhost:3000/
+Request Body:
+
+{
+  "key": "What's the capital of France?"
+}
+Response:
 
 
+{
+  "text": ["The capital of France is Paris."]
+}
+****
+**📁 Folder Structure**<br>
+
+├── client.js <br>    
+├── index.js <br>       
+├── package.json  <br>   
+└── public/     <br>      
+****
+
+**❗ Known Issues**
+The frontend JS has a bug: document("questionInput") should be document.getElementById("questionInput")
+
+API key is hardcoded—replace it with .env usage for safety
+****
+
+**🧑‍💻 Author**
+<br>  
+**👨‍💻 Project by:** ***Tushar singh<br>***
+
+**🌐 GitHub:** ***@Tushar9794***
 
