@@ -1,97 +1,69 @@
-# Gemini-AI-Clone
-A powerful and flexible clone of Google's Gemini AI, designed to simulate its core functionalities using state-of-the-art AI, deep learning techniques, and scalable architecture.
+<h1 align="center">🦌 antelope.ai</h1>
+<p align="center">
+  <b>A Gemini-powered AI chatbot clone</b><br>
+  <sub>Built with Node.js + Express • Gemini Pro API • Minimal Frontend</sub>
+</p>
 
-✨ Features
-Natural Language Understanding: Advanced parsing and comprehension of user inputs.
+<p align="center">
+  <img src="https://img.shields.io/badge/Powered%20By-Gemini%20AI-blueviolet?style=for-the-badge&logo=google" />
+  <img src="https://img.shields.io/badge/Made%20With-Node.js-green?style=for-the-badge&logo=node.js" />
+</p>
 
-Context-Aware Responses: Maintains conversation history and generates relevant replies.
+---
 
-Multi-Modal Support:  Handle text, images, and more seamlessly.
+## ✨ What is antelope.ai?
 
-API Integration: Easily connect with external APIs for real-time data and extensions.
+`antelope.ai` is a lightweight clone of Google's **Gemini AI chat**, designed to showcase how to integrate Gemini Pro with a Node.js backend and a simple HTML+JS frontend. Whether you want to build a chatbot, a creative assistant, or an AI-powered UI—this project is your perfect starting point.
 
-Customizable AI Models: Swap or fine-tune models based on project needs.
+---
 
-Scalable & Modular Design: Built for easy expansion and deployment.
-<br>
-****
+## 📸 Preview
 
+> Add a screenshot or GIF here if available
 
-🛠 Tech Stack
-Frontend:
+---
 
-React.js
+## 🚀 Features
 
-HTML5, CSS3, JavaScript (ES6+)
+- 🔥 Uses [Gemini Pro API](https://ai.google.dev/)
+- ⚡ Real-time responses
+- 🧠 Prompt → AI Text Generation
+- 🪶 Clean and modular codebase
+- 🌐 CORS-enabled REST API
 
-Backend:
+---
 
-Node.js (Express.js)
+## 📦 Tech Stack
 
-AI Model:
+| Layer    | Stack             |
+|----------|-------------------|
+| Backend  | Node.js, Express  |
+| AI Model | Google Generative AI (Gemini Pro) |
+| Frontend | HTML, CSS, JavaScript |
+| APIs     | REST over HTTP    |
 
-OpenAI ( GPT-3.5) or HuggingFace Transformers
-****
-Database:
+---
 
-MongoDB (NoSQL)
+## 🛠️ Getting Started
 
-PostgreSQL (SQL)
-****
-📦 Installation
-Clone the repository
+### Prerequisites
 
-bash
-Copy
-Edit
-git clone https://github.com/your-Tushar9794/gemini-ai-clone.git
-Navigate to the project directory
+- Node.js ≥ 18
+- A Gemini Pro API key from [Google AI Studio](https://ai.google.dev/)
 
-bash
-Copy
-Edit
-cd gemini-ai-clone
-Install dependencies
+### 🔧 Installation
 
-bash
-Copy
-Edit
+```bash
+git clone https://github.com/yourusername/antelope.ai.git
+cd antelope.ai
 npm install
 
+---
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Start the application
+🔑 Set your API key
+Replace the hardcoded key in index.js:
+const genAI = new GoogleGenerativeAI('YOUR_API_KEY');
 
-bash
-Copy
-Edit
-npm start
-****
 
-🛠️ Project Structure
-<br>
-gemini-ai-clone/
-├── client/               # Frontend (React.js)<br>
-├── server/               # Backend (Node.js, API routes)<br>
-├── models/               # AI Models and configuration<br>
-├── database/             # MongoDB/PostgreSQL schemas<br>
-├── public/               # Static assets<br>
-└── .env                  # Environment variables
-<br>
-🔮 Future Improvements (Planned)
-Add Voice Recognition and Speech-to-Text
 
-Integrate Vision Models for Image Understanding
-
-Real-time Chat Interface Enhancements
-
-Advanced Fine-tuning for Specific Domains
-
-OAuth 2.0 / JWT Authentication
-
-🤝 Contributing
-Contributions, issues, and feature requests are welcome!
 
